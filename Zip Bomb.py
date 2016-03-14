@@ -1,13 +1,15 @@
 '''
 Joshua Franke
 Creates a Zip Bomb (without malicious code in it)
-Version: 1.0.2
+Version: 1.0.3
 
 '''
 
 '''                           Imports and Variables                         '''
+print "Importing Files..."
 import zipfile, os
 
+print "Initializing Most Variables..."
 numBytes = 1
 numKilos = 1024 * numBytes
 numMegas = 1024 * numKilos
@@ -113,6 +115,7 @@ def copyNzip():
 
 
 '''                                Main Code                                '''
+print "Creating File..."
 file = open("run.txt","w")
     
 # Find correct function to call
@@ -131,3 +134,6 @@ elif num == "2":
 else:
     print "Not an Option"
     print "Stopping program"
+
+print "Finished"
+raw_input("Press Enter to Exit")
