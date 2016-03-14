@@ -1,58 +1,37 @@
 '''
 Joshua Franke
 Creates a Zip Bomb (without malicious code in it)
-Version: 1.0.1
+Version: 1.0.2
 
 '''
-# 0 gigas 1 megas 2 kilos 
 
-############################ Variables ######################################
-#############################################################################
-import zipfile
-import shutil
-import os
+'''                           Imports and Variables                         '''
+import zipfile, os
 
-# numBytes isn't needed but I left it here in order to show the logic.
 numBytes = 1
 numKilos = 1024 * numBytes
 numMegas = 1024 * numKilos
-
-
 numGigas = 0 # Place holder
 
-
-
-
-'''                           Side Note
-
-You get a memory error by using numGigas the way I have created the other
-variables. In order to avoid this problem I created a nested for loop.
-'''
-
-
-
-# Change this to change how many 0s to write to the file.
 print "Zipbombs tend to use Gigabyte files or bigger (there is no bigger here)"
 print ""
 print "Do you want the file to be a Gigabyte '0' a Megabyte '1' or a Kilobyte '2'"
 num = raw_input("Type the number without the quotes")
-###############################################################################
 
 
 
 
 
 
-######################### Write to File Functions #############################
-###############################################################################
-# If you want a file smaller than multiple Gigs this will write that many 0s
+'''                           Write File Functions                          '''
+# File smaller than a Gig
 def other():
     for x in range(0,num):
         file.write("0")
     file.close()
 
 
-# If you want a file larger than a Gig this will write that many 0s
+# File that is a Gig
 def GigFunction():
     count = 0
     for x in range(0,1024):
@@ -62,18 +41,13 @@ def GigFunction():
         print str(count) + " MB Written"
     file.close()
 
-###############################################################################
 
 
 
 
 
 
-
-
-
-############################# Copy & Zipping Function #########################
-###############################################################################
+'''                       Copy and Zipping Function                          '''
 def copyNzip():
     # Creates a zip file
     zf = zipfile.ZipFile("0.zip","w")
@@ -132,16 +106,13 @@ def copyNzip():
     os.remove("2.zip")
     os.rename("fifthBranch.zip","0.zip")
 
-###############################################################################
 
 
 
 
 
 
-################################ Main Code ####################################
-###############################################################################
-# Creates a file called run.txt
+'''                                Main Code                                '''
 file = open("run.txt","w")
     
 # Find correct function to call
@@ -158,6 +129,5 @@ elif num == "2":
     other()
     copyNzip()
 else:
-    print "I didn't understand that"
+    print "Not an Option"
     print "Stopping program"
-###############################################################################
