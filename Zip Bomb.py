@@ -1,17 +1,10 @@
 '''
 Joshua Franke
 Creates a Zip Bomb (without malicious code in it)
-Version: 1.0.0 
+Version: 1.0.1
 
-A zipbomb is a series of highly compressed files that is used to shut down an
-antivirus so other hazardous code can run. Most modern antivirus programs
-know how to treat these files now.
-
-
-
-THIS IS A ROUGH DRAFT. THE CODE WILL BE PRETTIER SOON. (Ex: Adding loops,
-looking for different methods, orginization, adding print statements for the console, etc.)
 '''
+# 0 gigas 1 megas 2 kilos 
 
 ############################ Variables ######################################
 #############################################################################
@@ -39,7 +32,10 @@ variables. In order to avoid this problem I created a nested for loop.
 
 
 # Change this to change how many 0s to write to the file.
-num = numMegas
+print "Zipbombs tend to use Gigabyte files or bigger (there is no bigger here)"
+print ""
+print "Do you want the file to be a Gigabyte '0' a Megabyte '1' or a Kilobyte '2'"
+num = raw_input("Type the number without the quotes")
 ###############################################################################
 
 
@@ -149,10 +145,19 @@ def copyNzip():
 file = open("run.txt","w")
     
 # Find correct function to call
-if num == numGigas:
+if num == "0":
     num = numMegas
     GigFunction()
-else:
+    copyNzip()
+elif num == "1":
+    num = numMegas
     other()
     copyNzip()
+elif num == "2":
+    num = numKilos
+    other()
+    copyNzip()
+else:
+    print "I didn't understand that"
+    print "Stopping program"
 ###############################################################################
